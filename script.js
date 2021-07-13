@@ -9,6 +9,8 @@ var guessField = document.querySelector('.guessField');
 
 var guessCount = 1;
 var resetButton;
+guessField.focus();
+
 
 function checkGuess() {
   var userGuess = Number(guessField.value);
@@ -24,6 +26,7 @@ function checkGuess() {
     setGameOver();
   } else if (guessCount === 10) {
     lastResult.textContent = '!!!GAME OVER!!!';
+    lowOrHi.textContent = '';
     setGameOver();
   } else {
     lastResult.textContent = 'Wrong!';
